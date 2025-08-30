@@ -399,3 +399,12 @@
 					});
 
 })(jQuery);
+function setLang(lang) {
+	if (lang === 'pl') {
+		document.querySelectorAll('.pl').forEach(el => el.style.display = '');
+		document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+	} else {
+		document.querySelectorAll('.en').forEach(el => el.style.display = '');
+		document.querySelectorAll('.pl').forEach(el => el.style.display = 'none');
+	}
+}
