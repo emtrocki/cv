@@ -9,6 +9,12 @@
 </head>
 <body class="is-preload">
 
+<!-- Language Switch (fixed, top-right) -->
+<div id="lang-switch" aria-label="Language switch">
+	<a href="javascript:void(0)" id="btn-pl" onclick="setLang('pl')" class="active">PL</a>
+	<a href="javascript:void(0)" id="btn-en" onclick="setLang('en')">EN</a>
+</div>
+
 <!-- Wrapper -->
 <div id="wrapper">
 
@@ -23,38 +29,29 @@
 					<img src="images/B380CB04-1648-4BFC-AC8F-ACF53A2C.jpg" alt="Maciek" />
 				</div>
 				<h1>Maciej Trocki</h1>
-				<p>Product Manager</p>
+				<p>Product manager</p>
 			</div>
 		</div>
 		<nav>
 			<ul>
 				<li>
 					<a href="#about" class="pl">O mnie</a>
-					<a href="#about-en" class="en" style="display:none">About</a>
+					<a href="#about-en" class="en hidden-lang">About</a>
 				</li>
 				<li>
 					<a href="#skills" class="pl">Umiejętności</a>
-					<a href="#skills-en" class="en" style="display:none">Skills</a>
+					<a href="#skills-en" class="en hidden-lang">Skills</a>
 				</li>
 				<li>
 					<a href="#experience" class="pl">Doświadczenie</a>
-					<a href="#experience-en" class="en" style="display:none">Experience</a>
+					<a href="#experience-en" class="en hidden-lang">Experience</a>
 				</li>
 				<li>
 					<a href="#contact" class="pl">Kontakt</a>
-					<a href="#contact-en" class="en" style="display:none">Contact</a>
+					<a href="#contact-en" class="en hidden-lang">Contact</a>
 				</li>
 			</ul>
 		</nav>
-
-		<!-- Language Switch -->
-
-		<div id="lang-switch">
-			<a onclick="setLang('pl')">PL</a>
-			<a onclick="setLang('en')">EN</a>
-		</div>
-
-
 	</header>
 
 	<!-- Main -->
@@ -62,16 +59,20 @@
 
 		<!-- about (PL) -->
 		<article id="about" class="pl">
-			<div style="text-align: center"> <img src="images/Gigachad.webp" width="263" height="303" alt="Maciek"  /> </div>
+			<div style="text-align: center">
+				<img src="images/Gigachad.webp" width="263" height="303" alt="Maciek" />
+			</div>
 			<h2 class="major">O mnie</h2>
 			<p>Lubię, kiedy technologia rozwiązuje realne problemy, a nie je mnoży. Jako Product Manager od kilku lat pracuję nad rozwojem platform reklamowych i narzędzi marketing automation – od koncepcji, przez roadmapy i współpracę z UX, aż po wdrożenie.</p>
 			<p>Na co dzień balansuję między światem biznesu a technologią: rozmawiam z zespołami, przekładam potrzeby użytkowników na konkretne wymagania, projektuję rozwiązania, które po prostu mają sens. Miałem okazję koordynować złożoną migrację systemu marketingowego do dużej platformy reklamowej, pracując równolegle z kilkoma zespołami, a także rozwijać nowe funkcjonalności, które dziś wspierają codzienną pracę marketerów. </p>
 			<p>Cenię sobie dobrą dokumentację, jasne procesy i partnerską atmosferę w zespole. Nieustannie uczę się czegoś nowego i szukam rozwiązań, które są nie tylko technicznie poprawne, ale też przemyślane i przyszłościowe. </p>
 		</article>
 
-		<!-- about (EN) -->
-		<article id="about-en" class="en" style="display:none">
-			<div style="text-align: center"> <img src="images/Gigachad.webp" width="263" height="303" alt="Maciek"  /> </div>
+		<!-- about (EN) – treść tymczasowo identyczna jak PL (bez lorem) -->
+		<article id="about-en" class="en hidden-lang">
+			<div style="text-align: center">
+				<img src="images/Gigachad.webp" width="263" height="303" alt="Maciek" />
+			</div>
 			<h2 class="major">About Me</h2>
 			<p>I love using technology to solve real problems. As a Product Manager, I build advertising platforms and marketing automation tools – from ideas and roadmaps to UX collaboration and final implementation.</p>
 			<p>Every day, I bridge the gap between business and tech: talking with teams, turning user needs into clear requirements, and designing solutions that just make sense. I’ve led complex system migrations and developed features that now streamline marketers’ work.</p>
@@ -82,6 +83,7 @@
 		<article id="skills" class="pl">
 			<h2 class="major">Umiejętności</h2>
 			<div class="skills-section">
+
 				<div class="skills-group">
 					<h3>Zarządzanie produktem i projektem</h3>
 					<ul>
@@ -92,6 +94,7 @@
 						<li>Skupienie na wartości biznesowej i doświadczeniu użytkownika</li>
 					</ul>
 				</div>
+
 				<div class="skills-group">
 					<h3>Współpraca i komunikacja</h3>
 					<ul>
@@ -119,16 +122,17 @@
 						<li>Język angielski: poziom B2</li>
 						<li>Wykształcenie wyższe – inżynier kierunek: informatyka</li>
 						<li>Wykształcenie wyższe – licencjat kierunek: grafika</li>
-
 					</ul>
 				</div>
+
 			</div>
 		</article>
 
-		<!-- skills (EN) -->
-		<article id="skills-en" class="en" style="display:none">
+		<!-- skills (EN)-->
+		<article id="skills-en" class="en hidden-lang">
 			<h2 class="major">Skills</h2>
 			<div class="skills-section">
+
 				<div class="skills-group">
 					<h3>Product & Project Management</h3>
 					<ul>
@@ -173,6 +177,7 @@
 		<article id="experience" class="pl">
 			<h2 class="major">Doświadczenie</h2>
 			<div class="experience-section">
+
 				<div class="job">
 					<h3>Product Manager </h3>
 					<h4> Wirtualna Polska</h4>
@@ -225,16 +230,17 @@
 						<li>Wsparcie techniczne i kontakt z klientami</li>
 						<li>Współpraca z innymi działami</li>
 						<li>Operacje bazodanowe (MSSQL)</li>
-
 					</ul>
 				</div>
+
 			</div>
 		</article>
 
-		<!-- experience (EN) -->
-		<article id="experience-en" class="en" style="display:none">
+		<!-- experience (EN)  -->
+		<article id="experience-en" class="en hidden-lang">
 			<h2 class="major">Experience</h2>
 			<div class="experience-section">
+
 				<div class="job">
 					<h3>Product Manager</h3>
 					<h4>Wirtualna Polska</h4>
@@ -293,6 +299,7 @@
 		<!-- contact (PL) -->
 		<article id="contact" class="pl">
 			<h2 class="major">Kontakt</h2>
+
 			<section class="contact-section">
 				<div class="contact-item">
 					<strong>Imię i nazwisko:</strong> Maciej Trocki
@@ -309,8 +316,8 @@
 			</section>
 		</article>
 
-		<!-- contact (EN) -->
-		<article id="contact-en" class="en" style="display:none">
+		<!-- contact (EN)  -->
+		<article id="contact-en" class="en hidden-lang">
 			<h2 class="major">Contact</h2>
 			<section class="contact-section">
 				<div class="contact-item">
@@ -332,10 +339,7 @@
 
 	<!-- Footer -->
 	<footer id="footer">
-		<p class="copyright">
-			&copy; 2025 Maciej Trocki &nbsp;|&nbsp; Design:
-			<a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a>
-		</p>
+		<p class="copyright">&copy; 2025 Maciej Trocki. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 	</footer>
 
 </div>
@@ -350,5 +354,57 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
+<!-- Lang Switch Script -->
+<script>
+	(function() {
+		// domyślnie PL
+		setLang(localStorage.getItem('lang') || 'pl', true);
+		// jeśli ktoś wejdzie bez hash, nic nie rób
+	})();
+
+	function setLang(lang, silent) {
+		const isPL = (lang === 'pl');
+
+		// toggle widoczności
+		document.querySelectorAll('.pl').forEach(el => el.classList.toggle('hidden-lang', !isPL));
+		document.querySelectorAll('.en').forEach(el => el.classList.toggle('hidden-lang', isPL));
+
+		// aktywny przycisk
+		document.getElementById('btn-pl').classList.toggle('active', isPL);
+		document.getElementById('btn-en').classList.toggle('active', !isPL);
+
+		// zapamiętaj wybór
+		localStorage.setItem('lang', lang);
+
+		// mapowanie sekcji PL <-> EN
+		const mapPLtoEN = {
+			'about': 'about-en',
+			'skills': 'skills-en',
+			'experience': 'experience-en',
+			'contact': 'contact-en'
+		};
+		const mapENtoPL = {
+			'about-en': 'about',
+			'skills-en': 'skills',
+			'experience-en': 'experience',
+			'contact-en': 'contact'
+		};
+
+		// jeśli jest otwarta sekcja (hash), przełącz na odpowiadającą w drugim języku
+		const current = (location.hash || '').replace('#', '');
+		let target = null;
+
+		if (isPL && mapENtoPL[current]) target = mapENtoPL[current];
+		if (!isPL && mapPLtoEN[current]) target = mapPLtoEN[current];
+
+		// jeśli mamy target, odpal przejście z main.js przez zmianę hash
+		if (target && !silent) {
+			// zamknij jeśli aktualna jest niewłaściwa
+			if (location.hash !== '#' + target) {
+				location.hash = '#' + target;
+			}
+		}
+	}
+</script>
 </body>
 </html>
