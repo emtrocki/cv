@@ -1659,13 +1659,13 @@ body.is-article-visible #footer {
 body.is-preload #footer {
 	opacity: 0;
 }
-/* Przełącznik języka w prawym górnym rogu */
+/* PrzeĹÄcznik jÄzyka w prawym gĂłrnym rogu */
 #lang-switch {
-	 position: absolute;
-	 top: 20px;
-	 right: 20px;
-	 text-align: right;
- }
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	text-align: right;
+}
 
 #lang-switch a {
 	color: inherit;
@@ -1720,3 +1720,15 @@ body.is-preload #footer {
 
 /* Hide/show language sections */
 .hidden-lang { display: none !important; }
+
+
+/* === CV FIX: prevent overlap of language switch and close X on mobile === */
+@media screen and (max-width: 736px) {
+	#lang-switch {
+		/* Move the language switch left so it doesn't collide with the 4rem-wide .close */
+		right: 4.25rem;
+		top: 0.75rem;
+		z-index: 1000; /* keep it visible but below the close hit area */
+	}
+}
+/* === END CV FIX === */
