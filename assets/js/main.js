@@ -408,3 +408,58 @@ function setLang(lang) {
 		document.querySelectorAll('.pl').forEach(el => el.style.display = 'none');
 	}
 }
+
+
+// === Safe single-button language toggle (no HTML edits) ===
+(function () {
+  function currentLang() {
+    // Detect based on visibility: anchors exist in original HTML, one has 'active' or PL shown by default
+    var plActiveAnchor = document.getElementById('btn-pl');
+    if (plActiveAnchor && plActiveAnchor.classList && plActiveAnchor.classList.contains('active')) return 'PL';
+    // Fallback: if '.en' is visible in nav labels
+    var enVisible = !!document.querySelector('.en:not(.hidden-lang)');
+    return enVisible ? 'EN' : 'PL';
+  }
+
+  function setButtonState(btn) {
+    var curr = currentLang();
+    btn.textContent = curr;
+    btn.setAttribute('aria-label', 'Language: ' + curr);
+    btn.classList.toggle('is-pl', curr === 'PL');
+    btn.classList.toggle('is-en', curr === 'EN');
+  }
+
+  function attach() {
+    var holder = document.getElementById('lang-switch');
+    if (!holder) return;
+    // Hide legacy anchors via style (CSS also hides them)
+    var oldPL = document.getElementById('btn-pl');
+    var oldEN = document.getElementById('btn-en');
+    if (oldPL) oldPL.style.display = 'none';
+    if (oldEN) oldEN.style.display = 'none';
+
+    // Create single toggle
+    var btn = document.createElement('button');
+    btn.id = 'lang-toggle';
+    btn.type = 'button';
+    holder.appendChild(btn);
+    setButtonState(btn);
+
+    btn.addEventListener('click', function() {
+      var curr = currentLang();
+      if (curr === 'PL') {
+        if (typeof window.setLang === 'function') window.setLang('en');
+      } else {
+        if (typeof window.setLang === 'function') window.setLang('pl');
+      }
+      // allow original setLang to update classes/visibility, then refresh button
+      setTimeout(function(){ setButtonState(btn); }, 0);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attach);
+  } else {
+    attach();
+  }
+})();
